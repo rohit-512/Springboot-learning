@@ -1,25 +1,33 @@
-# Spring Boot User API
-
-A simple backend project built using Spring Boot.
+# User Management API (Spring Boot)
 
 ## Features
-- CRUD APIs (Create, Read, Update, Delete)
-- Service layer architecture
-- Validation using annotations
-- Global exception handling
-- Standard API response format
+- CRUD Operations
+- Validation
+- Global Exception Handling
+- H2 Database Integration
+- Search by Name (case-insensitive)
+- Filter by Age / Age Range
+- Pagination & Sorting
 
 ## Tech Stack
 - Java
 - Spring Boot
-- Maven
+- Spring Data JPA
+- H2 Database
 
 ## APIs
-- POST /user → create user
-- GET /users → get all users
-- GET /user/{id} → get user by id
-- PUT /user/{id} → update user
-- DELETE /user/{id} → delete user
 
-## Author
-Rohit Nagrikar
+### Create User
+POST /user
+
+### Get All Users
+GET /users
+
+### Search
+GET /user/search?name=rohit
+
+### Filter
+GET /users/filter?minAge=20&maxAge=30
+
+### Pagination + Sorting
+GET /users/page?page=0&size=2&sortBy=name
